@@ -24,6 +24,31 @@ function applyBudgetCurrency(){
  }
 }
 
+function syncMobileNavigation(){
+ document.querySelectorAll('.legacy-bottom-nav,.bottom-nav,#bottomNav,.mobile-bottom-nav').forEach(el=>el.remove());
+ const menu=document.getElementById('v8MobileMenu');
+ if(!menu)return;
+ const source=[...document.querySelectorAll('aside nav .nav[data-page]')];
+ const signature=source.map(x=>`${x.dataset.page}:${x.textContent.trim()}`).join('|');
+ if(menu.dataset.janelleSignature===signature)return;
+ menu.dataset.janelleSignature=signature;
+ menu.innerHTML='';
+ for(const desktopButton of source){
+  const button=document.createElement('button');
+  button.type='button';
+  button.dataset.page=desktopButton.dataset.page;
+  button.innerHTML=desktopButton.innerHTML;
+  button.classList.toggle('active',desktopButton.classList.contains('active'));
+  button.addEventListener('click',()=>{
+   desktopButton.click();
+   menu.classList.remove('open');
+   const trigger=document.getElementById('v8MenuBtn');
+   if(trigger)trigger.textContent='☰';
+  });
+  menu.appendChild(button);
+ }
+}
+
 function applyJanelleLayout(){
  hidePage('calculator');
  hidePage('statistics');
@@ -51,6 +76,7 @@ function applyJanelleLayout(){
  if(brand&&!brand.querySelector('.janelle-monogram'))brand.innerHTML='<div class="janelle-monogram">J</div><span><strong>Janelle</strong><small>My dashboard</small></span>';
 
  applyBudgetCurrency();
+ syncMobileNavigation();
 }
 
 function upsertStylesheet(id,href){
