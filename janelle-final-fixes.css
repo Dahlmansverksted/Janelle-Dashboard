@@ -1,0 +1,89 @@
+/* Final light-theme overrides loaded after every legacy stylesheet */
+:root{color-scheme:light!important}
+
+.stats article,
+.stats>article,
+#training .stats article,
+#budget .stats article,
+#statisticsGrid>article,
+.stat-tile,
+.muscle-card,
+.progress-table-card,
+#muscleGroupCard,
+#training article,
+#training .card{
+  background:#fff!important;
+  background-image:linear-gradient(145deg,#fff 0%,#fff7fb 100%)!important;
+  color:#4a2a3b!important;
+  border:1px solid rgba(218,82,151,.17)!important;
+  box-shadow:0 16px 42px rgba(162,73,116,.09)!important;
+}
+
+.stats article small,
+.stats article b,
+#training .stats article small,
+#training .stats article b,
+.stat-tile small,
+.stat-tile b{
+  color:#6c3a52!important;
+}
+
+#training .stats article small,
+.stat-tile small{color:#cf5795!important}
+
+.side-actions button,
+.side-actions label,
+#export,
+#import+*,
+.cloud-status+button{
+  background:#fff8fc!important;
+  color:#a83f76!important;
+  border:1px solid rgba(217,79,152,.24)!important;
+  box-shadow:none!important;
+}
+
+.cloud-status.error,
+.cloud-status.online,
+.cloud-status.syncing{
+  background:transparent!important;
+  color:#a9557e!important;
+}
+
+#exerciseChart,
+#homeProgressChart,
+#muscleGroupChart,
+canvas{
+  background:#fff!important;
+  border-radius:14px!important;
+}
+
+.chart-legend,
+.muscle-legend,
+.muscle-chart-wrap,
+.progress-table-card .head{
+  background:#fff!important;
+  color:#4a2a3b!important;
+}
+
+.workout,
+.workout-card,
+.workout-summary,
+.exercise-progress,
+.exercise-progress-row,
+.goal-card,
+.task-row,
+.date-card,
+.shopping-card,
+.note-card{
+  background:#fff!important;
+  color:#4a2a3b!important;
+  border-color:rgba(218,82,151,.16)!important;
+}
+
+/* Catch inline or highly specific legacy dark panels */
+#training [style*="background"],
+dialog [style*="background"]{
+  background-color:#fff!important;
+}
+
+#training *, dialog *{scrollbar-color:#e8a0c4 #f9eaf2}
