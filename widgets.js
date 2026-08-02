@@ -42,7 +42,7 @@ clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);watchRen
   await script('/dashboard-unified.js?v=30');ensureRenderTargets();
   await script('/goals.js?v=30');ensureRenderTargets();
   await script('/dashboard-fixes.js?v=30');ensureRenderTargets();
-  await script('/janelle-custom.js?v=30');ensureRenderTargets();
+  await script('/janelle-custom.js?v=31');ensureRenderTargets();
   await script('/daily-routine.js?v=30');ensureRenderTargets();
   await script('/janelle-exercise.js?v=1');ensureRenderTargets();
   await new Promise(resolve=>setTimeout(resolve,150));
