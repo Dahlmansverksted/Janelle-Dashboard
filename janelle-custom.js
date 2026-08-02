@@ -87,7 +87,7 @@ function upsertStylesheet(id,href){
 
 function installTheme(){
  upsertStylesheet('janelle-theme-v2','/janelle-theme-v2.css?v=4');
- upsertStylesheet('janelle-final-fixes','/janelle-final-fixes.css?v=1');
+ upsertStylesheet('janelle-final-fixes','/janelle-final-fixes.css?v=2');
 }
 
 installTheme();
