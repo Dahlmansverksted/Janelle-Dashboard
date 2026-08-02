@@ -34,14 +34,15 @@ function applyJanelleLayout(){
  if(brand&&!brand.querySelector('.janelle-monogram'))brand.innerHTML='<div class="janelle-monogram">J</div><span><strong>Janelle</strong><small>My dashboard</small></span>';
 }
 
+function upsertStylesheet(id,href){
+ let link=document.getElementById(id);
+ if(!link){link=document.createElement('link');link.id=id;link.rel='stylesheet';document.head.appendChild(link)}
+ link.href=href;
+}
+
 function installTheme(){
- const existing=document.getElementById('janelle-theme-v2');
- if(existing){existing.href='/janelle-theme-v2.css?v=3';return}
- const link=document.createElement('link');
- link.id='janelle-theme-v2';
- link.rel='stylesheet';
- link.href='/janelle-theme-v2.css?v=3';
- document.head.appendChild(link);
+ upsertStylesheet('janelle-theme-v2','/janelle-theme-v2.css?v=4');
+ upsertStylesheet('janelle-final-fixes','/janelle-final-fixes.css?v=1');
 }
 
 installTheme();
