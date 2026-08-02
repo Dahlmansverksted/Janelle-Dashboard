@@ -11,19 +11,31 @@ function json(value, status = 200) {
   });
 }
 
+async function ensureSchema(db) {
+  await db.prepare(`
+    CREATE TABLE IF NOT EXISTS dashboard_state (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      data TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    )
+  `).run();
+}
+
 export async function onRequestGet({ env }) {
   if (!env.DB) return json({ error: "D1 binding DB is missing" }, 500);
 
-  const row = await env.DB
-    .prepare("SELECT data, updated_at FROM dashboard_state WHERE id = 1")
-    .first();
-
-  if (!row) return json({ error: "Not found" }, 404);
-
   try {
+    await ensureSchema(env.DB);
+    const row = await env.DB
+      .prepare("SELECT data, updated_at FROM dashboard_state WHERE id = 1")
+      .first();
+
+    if (!row) return json({ error: "Not found" }, 404);
+
     return json({ data: JSON.parse(row.data), updatedAt: row.updated_at });
-  } catch {
-    return json({ error: "Stored dashboard data is invalid" }, 500);
+  } catch (error) {
+    console.error("D1 GET failed", error);
+    return json({ error: "Database unavailable" }, 500);
   }
 }
 
@@ -46,17 +58,23 @@ export async function onRequestPut({ request, env }) {
     return json({ error: "Payload too large" }, 413);
   }
 
-  const now = new Date().toISOString();
-  await env.DB
-    .prepare(`
-      INSERT INTO dashboard_state (id, data, updated_at)
-      VALUES (1, ?, ?)
-      ON CONFLICT(id) DO UPDATE SET
-        data = excluded.data,
-        updated_at = excluded.updated_at
-    `)
-    .bind(payload, now)
-    .run();
+  try {
+    await ensureSchema(env.DB);
+    const now = new Date().toISOString();
+    await env.DB
+      .prepare(`
+        INSERT INTO dashboard_state (id, data, updated_at)
+        VALUES (1, ?, ?)
+        ON CONFLICT(id) DO UPDATE SET
+          data = excluded.data,
+          updated_at = excluded.updated_at
+      `)
+      .bind(payload, now)
+      .run();
 
-  return json({ ok: true, updatedAt: now });
+    return json({ ok: true, updatedAt: now });
+  } catch (error) {
+    console.error("D1 PUT failed", error);
+    return json({ error: "Database unavailable" }, 500);
+  }
 }
