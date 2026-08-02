@@ -1,14 +1,15 @@
 (()=>{
 'use strict';
 
-function removePage(page){
+function hidePage(page){
  document.querySelectorAll(`.nav[data-page="${page}"]`).forEach(el=>el.remove());
- document.getElementById(page)?.remove();
+ const section=document.getElementById(page);
+ if(section){section.hidden=true;section.style.display='none';section.setAttribute('aria-hidden','true')}
 }
 
 function applyJanelleLayout(){
- removePage('calculator');
- removePage('statistics');
+ hidePage('calculator');
+ hidePage('statistics');
 
  document.querySelectorAll('.v8-carousel,#backgroundSlideshow,.bg-overlay').forEach(el=>el.remove());
  document.querySelectorAll('[data-go="calculator"],[data-go="statistics"]').forEach(el=>el.remove());
@@ -30,11 +31,7 @@ function applyJanelleLayout(){
  document.title='Janelle Dashboard';
 
  const brand=document.querySelector('.brand');
- if(brand)brand.innerHTML='<div class="janelle-monogram">J</div><span><strong>Janelle</strong><small>My dashboard</small></span>';
-
- document.querySelectorAll('.quick-grid [data-modal]').forEach(button=>{
-  if(button.dataset.modal==='calculatorModal')button.remove();
- });
+ if(brand&&!brand.querySelector('.janelle-monogram'))brand.innerHTML='<div class="janelle-monogram">J</div><span><strong>Janelle</strong><small>My dashboard</small></span>';
 }
 
 function installTheme(){
