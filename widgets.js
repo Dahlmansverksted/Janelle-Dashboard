@@ -38,12 +38,13 @@ function watchRenderTargets(){ensureRenderTargets();const observer=new MutationO
 clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);watchRenderTargets();
 (async()=>{
  try{
-  await script('/public-sync.js?v=29');ensureRenderTargets();
-  await script('/dashboard-unified.js?v=29');ensureRenderTargets();
-  await script('/goals.js?v=29');ensureRenderTargets();
-  await script('/dashboard-fixes.js?v=29');ensureRenderTargets();
-  await script('/janelle-custom.js?v=29');ensureRenderTargets();
-  await script('/daily-routine.js?v=29');ensureRenderTargets();
+  await script('/public-sync.js?v=30');ensureRenderTargets();
+  await script('/dashboard-unified.js?v=30');ensureRenderTargets();
+  await script('/goals.js?v=30');ensureRenderTargets();
+  await script('/dashboard-fixes.js?v=30');ensureRenderTargets();
+  await script('/janelle-custom.js?v=30');ensureRenderTargets();
+  await script('/daily-routine.js?v=30');ensureRenderTargets();
+  await script('/janelle-exercise.js?v=1');ensureRenderTargets();
   await new Promise(resolve=>setTimeout(resolve,150));
  }finally{
   clearTimeout(bootFallback);
