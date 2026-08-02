@@ -35,11 +35,12 @@ function applyJanelleLayout(){
 }
 
 function installTheme(){
- if(document.getElementById('janelle-theme-v2'))return;
+ const existing=document.getElementById('janelle-theme-v2');
+ if(existing){existing.href='/janelle-theme-v2.css?v=3';return}
  const link=document.createElement('link');
  link.id='janelle-theme-v2';
  link.rel='stylesheet';
- link.href='/janelle-theme-v2.css?v=2';
+ link.href='/janelle-theme-v2.css?v=3';
  document.head.appendChild(link);
 }
 
