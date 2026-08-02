@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700&display=swap');
+
+:root{
+ --bg:#fff8fc!important;
+ --panel:#ffffff!important;
+ --card:#ffffff!important;
+ --text:#3f2432!important;
+ --muted:#9c7388!important;
+ --line:rgba(226,112,169,.20)!important;
+ --oak:#ef74b2!important;
+ --walnut:#d94f98!important;
+ --accent:#ef74b2!important;
+}
+*{font-family:'Nunito',sans-serif!important}
+h1,h2,h3,.hero h2,.brand strong,.janelle-monogram{font-family:'DM Serif Display',serif!important;letter-spacing:.01em}
+html,body{background:#fff8fc!important;color:var(--text)!important}
+body{background:linear-gradient(145deg,#fffafd 0%,#fff2f8 48%,#fff9fc 100%)!important}
+main{background:transparent!important}
+.shell{background:transparent!important}
+aside{background:rgba(255,255,255,.92)!important;border-right:1px solid rgba(226,112,169,.16)!important;box-shadow:18px 0 45px rgba(189,94,139,.08)!important}
+.brand{color:#6b3853!important}
+.janelle-monogram{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f6a8cd,#e86aab);color:white;font-size:23px;box-shadow:0 10px 24px rgba(217,79,152,.24)}
+.nav{color:#7d5369!important;border-radius:14px!important}
+.nav:hover{background:#fff0f7!important;color:#c8458d!important}
+.nav.active{background:linear-gradient(135deg,#fbe0ee,#fff1f7)!important;color:#c63f88!important;border-color:rgba(217,79,152,.22)!important;box-shadow:0 10px 24px rgba(217,79,152,.10)!important}
+.card,.world-widget,.hero,.goal-card,.workout,.date-card,.shopping-card,.note-card,.budget-excel-panel,.stat-tile,.place-card{
+ background:rgba(255,255,255,.94)!important;
+ border:1px solid rgba(226,112,169,.16)!important;
+ box-shadow:0 18px 55px rgba(162,73,116,.09)!important;
+ color:var(--text)!important;
+}
+.hero{background:linear-gradient(135deg,#ffffff 0%,#fff2f8 100%)!important}
+.hero em,.head small,.toolbar small{color:#d35a98!important}
+.hero h2{font-size:clamp(38px,6vw,72px)!important;color:#6d3855!important;font-weight:400!important}
+button,.primary,.outline,input,select,textarea{font-family:'Nunito',sans-serif!important}
+button.primary,.primary{background:linear-gradient(135deg,#e968aa,#f59bc7)!important;border-color:#e968aa!important;color:white!important;box-shadow:0 10px 22px rgba(217,79,152,.20)!important}
+button.primary:hover,.primary:hover{transform:translateY(-1px);filter:brightness(1.02)}
+button.outline,.outline,.filter{background:#fff8fc!important;border-color:rgba(217,79,152,.24)!important;color:#b5427d!important}
+.filter.active{background:#f9ddea!important;color:#b83b7d!important}
+.link{color:#d94f98!important}
+input,select,textarea{background:#fffafd!important;border-color:rgba(217,79,152,.20)!important;color:#4b2b3b!important}
+input:focus,select:focus,textarea:focus{border-color:#e56aa8!important;box-shadow:0 0 0 3px rgba(229,106,168,.13)!important}
+.progress,.daily-routine-v3-progress{background:#f8e7f0!important}
+.progress i,.goal-progress i,.habit-bar i,.daily-routine-v3-progress i{background:linear-gradient(90deg,#dc559d,#f39ac5)!important}
+.clock,.weather-line b,.goal-percent{color:#d94f98!important}
+#backgroundSlideshow,.bg-overlay,.v8-carousel{display:none!important}
+.side-actions{border-top-color:rgba(217,79,152,.15)!important}
+.cloud-status{color:#b35b86!important}
+.daily-routine-v3-item{background:#fffafd!important;border-color:rgba(217,79,152,.17)!important;color:#5b3448!important}
+.daily-routine-v3-item:hover{background:#fff2f8!important;border-color:rgba(217,79,152,.34)!important}
+.daily-routine-v3-check{border-color:rgba(217,79,152,.35)!important}
+.daily-routine-v3-item.done .daily-routine-v3-check{background:linear-gradient(135deg,#df5da1,#f49bc6)!important;border-color:#df5da1!important;color:white!important}
+.daily-routine-v3-add{display:flex;gap:8px;margin:12px 0}
+.daily-routine-v3-add input{flex:1;min-width:0}
+.daily-routine-v3-delete{margin-left:auto;border:0;background:transparent!important;color:#c783a4!important;font-size:18px;padding:4px 8px;box-shadow:none!important}
+.daily-routine-empty{color:var(--muted);padding:18px 4px;text-align:center;font-style:italic}
+@media(max-width:700px){aside{background:#fff!important}.hero h2{font-size:44px!important}.daily-routine-v3-add{flex-direction:column}}
