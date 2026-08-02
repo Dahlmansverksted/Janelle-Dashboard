@@ -1,13 +1,13 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "dahlman-dashboard",
+  "name": "janelle-dashboard",
   "compatibility_date": "2026-07-29",
   "pages_build_output_dir": ".",
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "dahlman-dashboard-db",
-      "database_id": "a9cea7de-20dc-4fd8-956a-00a220ece629",
+      "database_name": "janelle-dashboard-db",
+      "database_id": "fdc1d10f-af47-4cbc-8ec3-88410987775c",
       "migrations_dir": "migrations"
     }
   ]
