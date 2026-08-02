@@ -35,22 +35,16 @@ function script(src){return new Promise(resolve=>{const s=document.createElement
 const renderTargetIds=['dateList','nextDate','nextCountdown','homeDaysSince'];
 function ensureRenderTargets(){for(const id of renderTargetIds){if(document.getElementById(id))continue;const el=document.createElement('div');el.id=id;el.hidden=true;el.setAttribute('aria-hidden','true');el.dataset.compatTarget='true';document.body.appendChild(el)}}
 function watchRenderTargets(){ensureRenderTargets();const observer=new MutationObserver(()=>ensureRenderTargets());observer.observe(document.documentElement,{childList:true,subtree:true});window.__renderTargetObserver=observer}
-function installRuntimeStyles(){if(document.getElementById('runtime-style-fixes'))return;const style=document.createElement('style');style.id='runtime-style-fixes';style.textContent=`
-.chart-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(216,176,139,.12)}
-.chart-legend span{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:11px;line-height:1.4}
-.chart-legend i{display:block;width:8px;height:8px;border-radius:50%;flex:0 0 8px}
-@media(max-width:700px){.chart-legend{display:grid;grid-template-columns:1fr 1fr;gap:9px}}
-@media(max-width:430px){.chart-legend{grid-template-columns:1fr}}
-`;document.head.appendChild(style)}
-clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);installRuntimeStyles();watchRenderTargets();
+clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);watchRenderTargets();
 (async()=>{
  try{
-  await script('/public-sync.js?v=28');ensureRenderTargets();
-  await script('/dashboard-unified.js?v=28');ensureRenderTargets();
-  await script('/goals.js?v=28');ensureRenderTargets();
-  await script('/dashboard-fixes.js?v=28');ensureRenderTargets();
-  await script('/daily-routine.js?v=28');ensureRenderTargets();
-  await new Promise(resolve=>setTimeout(resolve,120));
+  await script('/public-sync.js?v=29');ensureRenderTargets();
+  await script('/dashboard-unified.js?v=29');ensureRenderTargets();
+  await script('/goals.js?v=29');ensureRenderTargets();
+  await script('/dashboard-fixes.js?v=29');ensureRenderTargets();
+  await script('/janelle-custom.js?v=29');ensureRenderTargets();
+  await script('/daily-routine.js?v=29');ensureRenderTargets();
+  await new Promise(resolve=>setTimeout(resolve,150));
  }finally{
   clearTimeout(bootFallback);
   revealDashboard();
