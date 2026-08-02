@@ -1,0 +1,50 @@
+/* Janelle Dashboard — black and pink theme */
+:root{
+  --bg:#080508!important;
+  --panel:#130d13!important;
+  --card:#171017!important;
+  --text:#fff7fb!important;
+  --muted:#c7aebb!important;
+  --line:rgba(255,105,180,.18)!important;
+  --oak:#ff78ba!important;
+  --walnut:#ff3f9b!important;
+  --accent:#ff4fa3!important;
+}
+body{
+  background:
+    radial-gradient(circle at 78% 3%,rgba(255,79,163,.20),transparent 34%),
+    radial-gradient(circle at 12% 88%,rgba(130,25,85,.20),transparent 42%),
+    #080508!important;
+}
+#backgroundSlideshow{
+  background:radial-gradient(circle at 70% 0%,rgba(255,79,163,.20),transparent 42%),#080508!important;
+}
+.bg-slide{filter:saturate(.72) brightness(.48) contrast(1.06)!important}
+.bg-overlay{
+  background:linear-gradient(90deg,rgba(8,5,8,.82),rgba(18,8,15,.62) 48%,rgba(20,7,16,.55),rgba(8,5,8,.78))!important;
+}
+aside,.card,.world-widget,.hero,.v8-carousel,.goal-card,.workout,.date-card,.shopping-card,.note-card,
+.budget-excel-panel,.stat-tile{
+  border-color:rgba(255,105,180,.17)!important;
+  box-shadow:0 18px 55px rgba(0,0,0,.28)!important;
+}
+aside{background:rgba(9,5,9,.90)!important}
+.card,.world-widget,.goal-card,.workout,.date-card,.shopping-card,.note-card,.budget-excel-panel{
+  background:linear-gradient(145deg,rgba(28,16,26,.94),rgba(14,9,14,.94))!important;
+}
+button.primary,.primary,.daily-routine-item.done .daily-routine-box{
+  background:linear-gradient(135deg,#ff3f9b,#ff78ba)!important;
+  border-color:#ff78ba!important;
+  color:#170711!important;
+}
+button.outline,.outline,.nav.active,.filter.active{
+  border-color:rgba(255,105,180,.45)!important;
+  background:rgba(255,79,163,.12)!important;
+}
+.nav.active,.link,.goal-percent,.weather-line b,.clock{color:#ff8dc6!important}
+.progress i,.goal-progress i,.habit-bar i{
+  background:linear-gradient(90deg,#ff3f9b,#ff9dce)!important;
+}
+input:focus,select:focus,textarea:focus{border-color:#ff68b2!important;box-shadow:0 0 0 3px rgba(255,79,163,.13)!important}
+::selection{background:rgba(255,79,163,.38)}
+@media(max-width:700px){.bg-overlay{background:rgba(8,5,8,.66)!important}}

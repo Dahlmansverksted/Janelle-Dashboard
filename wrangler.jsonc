@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dahlman-dashboard",
+  "compatibility_date": "2026-07-29",
+  "pages_build_output_dir": ".",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dahlman-dashboard-db",
+      "database_id": "a9cea7de-20dc-4fd8-956a-00a220ece629",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

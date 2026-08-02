@@ -1,0 +1,20 @@
+{
+  "name": "dahlman-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal Dahlman Dashboard hosted on Cloudflare Pages with D1 sync.",
+  "scripts": {
+    "dev": "wrangler pages dev . --d1 DB=dahlman-dashboard-db",
+    "db:create": "wrangler d1 create dahlman-dashboard-db --location weur",
+    "db:migrate:local": "wrangler d1 migrations apply dahlman-dashboard-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply dahlman-dashboard-db --remote",
+    "deploy": "wrangler pages deploy . --project-name dahlman-dashboard",
+    "check": "node --check app.js && node --check functions/api/state.js"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
