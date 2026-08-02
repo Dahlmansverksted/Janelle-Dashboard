@@ -7,6 +7,23 @@ function hidePage(page){
  if(section){section.hidden=true;section.style.display='none';section.setAttribute('aria-hidden','true')}
 }
 
+function applyBudgetCurrency(){
+ const roots=[document.getElementById('budget'),document.getElementById('budgetModal')].filter(Boolean);
+ for(const root of roots){
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);
+  const nodes=[];
+  while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const node of nodes){
+   const next=node.nodeValue
+    .replace(/Amount \(NOK\)/g,'Amount (PHP)')
+    .replace(/\bNOK\b/g,'PHP')
+    .replace(/(\d(?:[\d\s.,]*\d|\d)?)\s*kr\b/gi,'₱$1')
+    .replace(/\bkr\b/gi,'₱');
+   if(next!==node.nodeValue)node.nodeValue=next;
+  }
+ }
+}
+
 function applyJanelleLayout(){
  hidePage('calculator');
  hidePage('statistics');
@@ -32,6 +49,8 @@ function applyJanelleLayout(){
 
  const brand=document.querySelector('.brand');
  if(brand&&!brand.querySelector('.janelle-monogram'))brand.innerHTML='<div class="janelle-monogram">J</div><span><strong>Janelle</strong><small>My dashboard</small></span>';
+
+ applyBudgetCurrency();
 }
 
 function upsertStylesheet(id,href){
@@ -52,7 +71,7 @@ const observer=new MutationObserver(()=>{
  clearTimeout(window.__janelleLayoutTimer);
  window.__janelleLayoutTimer=setTimeout(applyJanelleLayout,30);
 });
-observer.observe(document.body,{childList:true,subtree:true});
+observer.observe(document.body,{childList:true,subtree:true,characterData:true});
 window.__janelleLayoutObserver=observer;
 
 setTimeout(applyJanelleLayout,250);
