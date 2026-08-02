@@ -1,57 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;500;600;700;800&display=swap');
 
 :root{
- --bg:#fff8fc!important;
+ --bg:#fff7fb!important;
  --panel:#ffffff!important;
  --card:#ffffff!important;
- --text:#3f2432!important;
- --muted:#9c7388!important;
- --line:rgba(226,112,169,.20)!important;
- --oak:#ef74b2!important;
- --walnut:#d94f98!important;
- --accent:#ef74b2!important;
+ --text:#4a2a3b!important;
+ --muted:#9b7287!important;
+ --line:rgba(218,82,151,.18)!important;
+ --oak:#ed79b4!important;
+ --walnut:#d84e97!important;
+ --accent:#e663a6!important;
+ --danger:#c84e78!important;
+ color-scheme:light!important;
 }
-*{font-family:'Nunito',sans-serif!important}
-h1,h2,h3,.hero h2,.brand strong,.janelle-monogram{font-family:'DM Serif Display',serif!important;letter-spacing:.01em}
-html,body{background:#fff8fc!important;color:var(--text)!important}
-body{background:linear-gradient(145deg,#fffafd 0%,#fff2f8 48%,#fff9fc 100%)!important}
-main{background:transparent!important}
-.shell{background:transparent!important}
-aside{background:rgba(255,255,255,.92)!important;border-right:1px solid rgba(226,112,169,.16)!important;box-shadow:18px 0 45px rgba(189,94,139,.08)!important}
+
+*{box-sizing:border-box;font-family:'Nunito',sans-serif!important}
+html,body{min-height:100%;background:#fff7fb!important;color:var(--text)!important;overflow-x:hidden!important}
+body{background:linear-gradient(145deg,#fffafd 0%,#fff0f7 48%,#fff9fc 100%)!important}
+main,.shell,.page{background:transparent!important;color:var(--text)!important}
+h1,h2,h3,.hero h2,.brand strong,.janelle-monogram,.modal-head h3{font-family:'DM Serif Display',serif!important;letter-spacing:.01em;color:#69384f!important}
+p,span,b,strong,small,label,td,th,li{color:inherit}
+
+aside{background:rgba(255,255,255,.96)!important;border-right:1px solid rgba(218,82,151,.15)!important;box-shadow:18px 0 50px rgba(175,73,122,.08)!important}
 .brand{color:#6b3853!important}
-.janelle-monogram{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f6a8cd,#e86aab);color:white;font-size:23px;box-shadow:0 10px 24px rgba(217,79,152,.24)}
-.nav{color:#7d5369!important;border-radius:14px!important}
-.nav:hover{background:#fff0f7!important;color:#c8458d!important}
-.nav.active{background:linear-gradient(135deg,#fbe0ee,#fff1f7)!important;color:#c63f88!important;border-color:rgba(217,79,152,.22)!important;box-shadow:0 10px 24px rgba(217,79,152,.10)!important}
-.card,.world-widget,.hero,.goal-card,.workout,.date-card,.shopping-card,.note-card,.budget-excel-panel,.stat-tile,.place-card{
- background:rgba(255,255,255,.94)!important;
- border:1px solid rgba(226,112,169,.16)!important;
- box-shadow:0 18px 55px rgba(162,73,116,.09)!important;
+.janelle-monogram{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f8afd1,#e569aa);color:#fff!important;font-size:24px;box-shadow:0 10px 24px rgba(217,79,152,.22)}
+.nav{color:#7d5369!important;border-radius:14px!important;border-color:transparent!important}
+.nav:hover{background:#fff0f7!important;color:#bf3f82!important}
+.nav.active{background:linear-gradient(135deg,#fbddea,#fff1f7)!important;color:#bc3d80!important;border-color:rgba(217,79,152,.20)!important;box-shadow:0 9px 22px rgba(217,79,152,.09)!important}
+
+.card,.world-widget,.hero,.goal-card,.workout,.date-card,.shopping-card,.note-card,.budget-excel-panel,.stat-tile,.place-card,.progress-table-card,.list article{
+ background:#fff!important;
+ border:1px solid rgba(218,82,151,.16)!important;
+ box-shadow:0 18px 50px rgba(162,73,116,.08)!important;
  color:var(--text)!important;
 }
-.hero{background:linear-gradient(135deg,#ffffff 0%,#fff2f8 100%)!important}
-.hero em,.head small,.toolbar small{color:#d35a98!important}
-.hero h2{font-size:clamp(38px,6vw,72px)!important;color:#6d3855!important;font-weight:400!important}
+.hero{background:linear-gradient(135deg,#fff 0%,#ffeef6 100%)!important}
+.hero em,.head small,.toolbar small,.modal-head small{color:#cf5795!important}
+.hero h2{font-size:clamp(38px,6vw,70px)!important;font-weight:400!important}
+.head h3,.toolbar h2{color:#69384f!important}
+.empty,.muted,.weather-updated{color:var(--muted)!important}
+
 button,.primary,.outline,input,select,textarea{font-family:'Nunito',sans-serif!important}
-button.primary,.primary{background:linear-gradient(135deg,#e968aa,#f59bc7)!important;border-color:#e968aa!important;color:white!important;box-shadow:0 10px 22px rgba(217,79,152,.20)!important}
-button.primary:hover,.primary:hover{transform:translateY(-1px);filter:brightness(1.02)}
-button.outline,.outline,.filter{background:#fff8fc!important;border-color:rgba(217,79,152,.24)!important;color:#b5427d!important}
-.filter.active{background:#f9ddea!important;color:#b83b7d!important}
-.link{color:#d94f98!important}
-input,select,textarea{background:#fffafd!important;border-color:rgba(217,79,152,.20)!important;color:#4b2b3b!important}
-input:focus,select:focus,textarea:focus{border-color:#e56aa8!important;box-shadow:0 0 0 3px rgba(229,106,168,.13)!important}
-.progress,.daily-routine-v3-progress{background:#f8e7f0!important}
-.progress i,.goal-progress i,.habit-bar i,.daily-routine-v3-progress i{background:linear-gradient(90deg,#dc559d,#f39ac5)!important}
-.clock,.weather-line b,.goal-percent{color:#d94f98!important}
+button{cursor:pointer}
+button.primary,.primary{background:linear-gradient(135deg,#df579d,#f092bf)!important;border:1px solid #df579d!important;color:#fff!important;box-shadow:0 10px 22px rgba(217,79,152,.18)!important}
+button.primary:hover,.primary:hover{filter:brightness(1.03);transform:translateY(-1px)}
+button.outline,.outline,.filter,.link-button{background:#fff8fc!important;border:1px solid rgba(217,79,152,.25)!important;color:#b5427d!important}
+.filter.active{background:#f9dce9!important;color:#b83b7d!important}
+button.delete,[data-delete],[data-del],.daily-routine-v3-delete{background:#fff4f8!important;border-color:rgba(198,67,113,.18)!important;color:#bd4774!important}
+.link{color:#d34f94!important}
+
+input,select,textarea{
+ background:#fffafd!important;
+ border:1px solid rgba(217,79,152,.22)!important;
+ color:#4b2b3b!important;
+ border-radius:12px!important;
+ box-shadow:none!important;
+}
+input::placeholder,textarea::placeholder{color:#ba95a8!important}
+input:focus,select:focus,textarea:focus{outline:none!important;border-color:#e56aa8!important;box-shadow:0 0 0 3px rgba(229,106,168,.13)!important}
+select option{background:#fff!important;color:#4b2b3b!important}
+label{color:#7d4a64!important;font-weight:700!important}
+
+/* Complete modal reset */
+dialog{
+ background:#fff!important;
+ color:var(--text)!important;
+ border:1px solid rgba(218,82,151,.20)!important;
+ border-radius:24px!important;
+ box-shadow:0 28px 90px rgba(82,28,55,.24)!important;
+ max-width:min(920px,calc(100vw - 28px))!important;
+ max-height:calc(100vh - 28px)!important;
+ overflow:auto!important;
+}
+dialog::backdrop{background:rgba(58,35,47,.50)!important;backdrop-filter:blur(5px)}
+dialog form,.workout-dialog form,.workout-form-v4,.wide{
+ background:#fff!important;
+ color:var(--text)!important;
+ border:0!important;
+ min-width:0!important;
+ width:100%!important;
+ max-width:100%!important;
+ overflow:visible!important;
+}
+.modal-head{background:#fff!important;border-bottom:1px solid rgba(218,82,151,.14)!important;color:var(--text)!important}
+.modal-head button{background:#fff4f9!important;color:#b34b7e!important;border:1px solid rgba(217,79,152,.18)!important}
+.form-actions{background:#fff!important;border-top:1px solid rgba(218,82,151,.14)!important;position:sticky;bottom:0;padding-top:14px!important}
+
+/* Workout builder and set rows */
+.workout-dialog,.workout-dialog *{color:var(--text)}
+.workout-meta,.exercise-builder,.exercise-row,.exercise-block,.set-row,.sets,.workout-form-v4,.workout-form-v4>div{
+ background:#fff!important;
+ color:var(--text)!important;
+ border-color:rgba(218,82,151,.15)!important;
+}
+.exercise-row,.exercise-block{border:1px solid rgba(218,82,151,.15)!important;border-radius:16px!important;padding:14px!important;margin-bottom:12px!important;box-shadow:0 9px 24px rgba(166,71,116,.06)!important}
+.set-row{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto!important;gap:10px!important;align-items:end!important;padding:8px 0!important}
+.exercise-builder button,.set-row button{background:#fff4f9!important;color:#b6467e!important;border:1px solid rgba(217,79,152,.20)!important}
+.workout-dialog .full{width:100%!important}
+.workout-dialog textarea{min-height:90px!important}
+
+/* Tables, lists and secondary surfaces */
+table,thead,tbody,tfoot,tr,td,th{background:#fff!important;color:var(--text)!important;border-color:rgba(218,82,151,.14)!important}
+thead th,.subhead th{background:#fff1f7!important;color:#a83e75!important}
+.list,.date-grid,.shopping-grid,.stats-grid,.goal-list{color:var(--text)!important}
+.task-row,.shopping-item,.habit-stat,.goal-task,.note-card,.workout-card{background:#fffafd!important;border-color:rgba(218,82,151,.14)!important;color:var(--text)!important}
+
+.progress,.daily-routine-v3-progress,.goal-progress,.habit-bar{background:#f7e4ee!important}
+.progress i,.goal-progress i,.habit-bar i,.daily-routine-v3-progress i{background:linear-gradient(90deg,#da5199,#f096c2)!important}
+.clock,.weather-line b,.goal-percent{color:#d34f94!important}
+canvas{background:transparent!important}
+
 #backgroundSlideshow,.bg-overlay,.v8-carousel{display:none!important}
-.side-actions{border-top-color:rgba(217,79,152,.15)!important}
-.cloud-status{color:#b35b86!important}
+.side-actions{border-top-color:rgba(217,79,152,.14)!important}
+.cloud-status{color:#a9557e!important}
+
 .daily-routine-v3-item{background:#fffafd!important;border-color:rgba(217,79,152,.17)!important;color:#5b3448!important}
-.daily-routine-v3-item:hover{background:#fff2f8!important;border-color:rgba(217,79,152,.34)!important}
-.daily-routine-v3-check{border-color:rgba(217,79,152,.35)!important}
-.daily-routine-v3-item.done .daily-routine-v3-check{background:linear-gradient(135deg,#df5da1,#f49bc6)!important;border-color:#df5da1!important;color:white!important}
+.daily-routine-v3-item:hover{background:#fff1f7!important;border-color:rgba(217,79,152,.34)!important}
+.daily-routine-v3-check{border-color:rgba(217,79,152,.35)!important;background:#fff!important}
+.daily-routine-v3-item.done .daily-routine-v3-check{background:linear-gradient(135deg,#df5da1,#f49bc6)!important;border-color:#df5da1!important;color:#fff!important}
 .daily-routine-v3-add{display:flex;gap:8px;margin:12px 0}
 .daily-routine-v3-add input{flex:1;min-width:0}
-.daily-routine-v3-delete{margin-left:auto;border:0;background:transparent!important;color:#c783a4!important;font-size:18px;padding:4px 8px;box-shadow:none!important}
-.daily-routine-empty{color:var(--muted);padding:18px 4px;text-align:center;font-style:italic}
-@media(max-width:700px){aside{background:#fff!important}.hero h2{font-size:44px!important}.daily-routine-v3-add{flex-direction:column}}
+.daily-routine-v3-delete{margin-left:auto;font-size:18px;padding:4px 8px;box-shadow:none!important}
+.daily-routine-empty{color:var(--muted)!important;padding:18px 4px;text-align:center;font-style:italic}
+
+/* Remove old dark leftovers and horizontal overflow */
+.shell,main,.content,.page,dialog,dialog form,.workout-dialog,.exercise-builder{max-width:100%!important}
+body,main,.page,.content,dialog,dialog form{overflow-x:hidden!important}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#f9eaf2}
+::-webkit-scrollbar-thumb{background:#e8a0c4;border-radius:999px;border:2px solid #f9eaf2}
+
+@media(max-width:700px){
+ aside{background:#fff!important}
+ .hero h2{font-size:43px!important}
+ dialog{width:calc(100vw - 18px)!important;max-height:calc(100vh - 18px)!important;border-radius:18px!important;padding:14px!important}
+ .workout-meta,.two{grid-template-columns:1fr!important}
+ .set-row{grid-template-columns:1fr!important}
+ .daily-routine-v3-add{flex-direction:column}
+ .form-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}
+}
