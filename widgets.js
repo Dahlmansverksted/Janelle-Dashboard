@@ -39,14 +39,14 @@ clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);watchRen
 (async()=>{
  try{
   await script('/janelle-rescue.js?v=2');ensureRenderTargets();
-  await script('/dashboard-v3.js?v=33');ensureRenderTargets();
-  await script('/public-sync.js?v=33');ensureRenderTargets();
-  await script('/dashboard-unified.js?v=33');ensureRenderTargets();
-  await script('/goals.js?v=33');ensureRenderTargets();
-  await script('/dashboard-fixes.js?v=33');ensureRenderTargets();
-  await script('/janelle-custom.js?v=33');ensureRenderTargets();
-  await script('/daily-routine.js?v=33');ensureRenderTargets();
-  await script('/janelle-exercise.js?v=3');ensureRenderTargets();
+  await script('/dashboard-v3.js?v=34');ensureRenderTargets();
+  await script('/public-sync.js?v=34');ensureRenderTargets();
+  await script('/dashboard-unified.js?v=34');ensureRenderTargets();
+  await script('/goals.js?v=34');ensureRenderTargets();
+  await script('/dashboard-fixes.js?v=34');ensureRenderTargets();
+  await script('/janelle-custom.js?v=34');ensureRenderTargets();
+  await script('/daily-routine.js?v=34');ensureRenderTargets();
+  await script('/janelle-exercise.js?v=4');ensureRenderTargets();
   await new Promise(resolve=>setTimeout(resolve,180));
   try{if(typeof render==='function')render()}catch(error){console.warn('Final dashboard render:',error)}
  }finally{
