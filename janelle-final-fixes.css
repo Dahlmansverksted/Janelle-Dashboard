@@ -1,127 +1,31 @@
 /* Final light-theme overrides loaded after every legacy stylesheet */
 :root{color-scheme:light!important}
 
-.stats article,
-.stats>article,
-#training .stats article,
-#budget .stats article,
-#statisticsGrid>article,
-.stat-tile,
-.muscle-card,
-.progress-table-card,
-#muscleGroupCard,
-#training article,
-#training .card{
-  background:#fff!important;
-  background-image:linear-gradient(145deg,#fff 0%,#fff7fb 100%)!important;
-  color:#4a2a3b!important;
-  border:1px solid rgba(218,82,151,.17)!important;
-  box-shadow:0 16px 42px rgba(162,73,116,.09)!important;
-}
-
-.stats article small,
-.stats article b,
-#training .stats article small,
-#training .stats article b,
-.stat-tile small,
-.stat-tile b{
-  color:#6c3a52!important;
-}
-
-#training .stats article small,
-.stat-tile small{color:#cf5795!important}
-
-.side-actions button,
-.side-actions label,
-#export,
-#import+*,
-.cloud-status+button{
-  background:#fff8fc!important;
-  color:#a83f76!important;
-  border:1px solid rgba(217,79,152,.24)!important;
-  box-shadow:none!important;
-}
-
-.cloud-status.error,
-.cloud-status.online,
-.cloud-status.syncing{
-  background:transparent!important;
-  color:#a9557e!important;
-}
-
-#exerciseChart,
-#homeProgressChart,
-#muscleGroupChart,
-canvas{
-  background:#fff!important;
-  border-radius:14px!important;
-}
-
-.chart-legend,
-.muscle-legend,
-.muscle-chart-wrap,
-.progress-table-card .head{
-  background:#fff!important;
-  color:#4a2a3b!important;
-}
-
-.workout,
-.workout-card,
-.workout-summary,
-.exercise-progress,
-.exercise-progress-row,
-.goal-card,
-.task-row,
-.date-card,
-.shopping-card,
-.note-card{
-  background:#fff!important;
-  color:#4a2a3b!important;
-  border-color:rgba(218,82,151,.16)!important;
-}
+.stats article,.stats>article,#training .stats article,#budget .stats article,#statisticsGrid>article,.stat-tile,.muscle-card,.progress-table-card,#muscleGroupCard,#training article,#training .card{background:#fff!important;background-image:linear-gradient(145deg,#fff 0%,#fff7fb 100%)!important;color:#4a2a3b!important;border:1px solid rgba(218,82,151,.17)!important;box-shadow:0 16px 42px rgba(162,73,116,.09)!important}
+.stats article small,.stats article b,#training .stats article small,#training .stats article b,.stat-tile small,.stat-tile b{color:#6c3a52!important}
+#training .stats article small,.stat-tile small{color:#cf5795!important}
+.side-actions button,.side-actions label,#export,#import+*,.cloud-status+button{background:#fff8fc!important;color:#a83f76!important;border:1px solid rgba(217,79,152,.24)!important;box-shadow:none!important}
+.cloud-status.error,.cloud-status.online,.cloud-status.syncing{background:transparent!important;color:#a9557e!important}
+#exerciseChart,#homeProgressChart,#muscleGroupChart,canvas{background:#fff!important;border-radius:14px!important}
+.chart-legend,.muscle-legend,.muscle-chart-wrap,.progress-table-card .head{background:#fff!important;color:#4a2a3b!important}
+.workout,.workout-card,.workout-summary,.exercise-progress,.exercise-progress-row,.goal-card,.task-row,.date-card,.shopping-card,.note-card{background:#fff!important;color:#4a2a3b!important;border-color:rgba(218,82,151,.16)!important}
 
 /* Janelle mobile navigation */
-#v8MobileMenu{
-  background:rgba(255,255,255,.98)!important;
-  background-image:linear-gradient(160deg,#fff 0%,#fff1f7 100%)!important;
-  border:1px solid rgba(218,82,151,.20)!important;
-  box-shadow:0 20px 55px rgba(126,49,88,.18)!important;
-  color:#61364c!important;
-  border-radius:20px!important;
-  backdrop-filter:blur(18px)!important;
-}
-#v8MobileMenu button{
-  background:transparent!important;
-  color:#7b4b63!important;
-  border:1px solid transparent!important;
-  border-radius:13px!important;
-  box-shadow:none!important;
-}
-#v8MobileMenu button:hover,
-#v8MobileMenu button:focus-visible{
-  background:#fff4f9!important;
-  color:#bd3f81!important;
-  border-color:rgba(218,82,151,.18)!important;
-}
-#v8MobileMenu button.active{
-  background:linear-gradient(135deg,#f9d8e8,#fff0f7)!important;
-  color:#b93d7d!important;
-  border-color:rgba(218,82,151,.24)!important;
-  box-shadow:0 8px 20px rgba(199,67,132,.11)!important;
-}
+#v8MenuBtn{display:none;position:fixed;top:max(18px,env(safe-area-inset-top));right:18px;z-index:10020;width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,#e45b9f,#f294c1)!important;color:#fff!important;border:1px solid rgba(218,82,151,.30)!important;box-shadow:0 10px 24px rgba(202,70,135,.22)!important;font-size:24px;line-height:1;align-items:center;justify-content:center}
+#v8MobileMenu{display:none;position:fixed;top:calc(max(18px,env(safe-area-inset-top)) + 58px);right:16px;left:16px;z-index:10010;max-height:calc(100dvh - 100px);overflow:auto;padding:12px;background:rgba(255,255,255,.98)!important;background-image:linear-gradient(160deg,#fff 0%,#fff1f7 100%)!important;border:1px solid rgba(218,82,151,.20)!important;box-shadow:0 20px 55px rgba(126,49,88,.18)!important;color:#61364c!important;border-radius:20px!important;backdrop-filter:blur(18px)!important}
+#v8MobileMenu.open{display:grid;gap:7px}
+#v8MobileMenu button{width:100%;display:flex;align-items:center;gap:10px;padding:13px 14px;background:transparent!important;color:#7b4b63!important;border:1px solid transparent!important;border-radius:13px!important;box-shadow:none!important;text-align:left;font:inherit}
+#v8MobileMenu button:hover,#v8MobileMenu button:focus-visible{background:#fff4f9!important;color:#bd3f81!important;border-color:rgba(218,82,151,.18)!important}
+#v8MobileMenu button.active{background:linear-gradient(135deg,#f9d8e8,#fff0f7)!important;color:#b93d7d!important;border-color:rgba(218,82,151,.24)!important;box-shadow:0 8px 20px rgba(199,67,132,.11)!important}
 #v8MobileMenu button span{color:inherit!important}
-#v8MenuBtn{
-  background:linear-gradient(135deg,#e45b9f,#f294c1)!important;
-  color:#fff!important;
-  border:1px solid rgba(218,82,151,.30)!important;
-  box-shadow:0 10px 24px rgba(202,70,135,.22)!important;
-}
-#v8MenuBtn:hover,#v8MenuBtn:focus-visible{filter:brightness(1.04)!important}
 
-/* Catch inline or highly specific legacy dark panels */
-#training [style*="background"],
-dialog [style*="background"]{
-  background-color:#fff!important;
+@media(max-width:760px){
+ #v8MenuBtn{display:flex!important}
+ aside{display:none!important}
+ main{margin-left:0!important;width:100%!important}
+ .shell{display:block!important}
+ body{padding-top:calc(68px + env(safe-area-inset-top))!important}
 }
 
-#training *, dialog *{scrollbar-color:#e8a0c4 #f9eaf2}
+#training [style*="background"],dialog [style*="background"]{background-color:#fff!important}
+#training *,dialog *{scrollbar-color:#e8a0c4 #f9eaf2}
