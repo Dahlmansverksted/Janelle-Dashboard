@@ -38,16 +38,17 @@ function watchRenderTargets(){ensureRenderTargets();const observer=new MutationO
 clocks();setInterval(clocks,1000);refresh();setInterval(refresh,900000);watchRenderTargets();
 (async()=>{
  try{
-  await script('/janelle-rescue.js?v=1');ensureRenderTargets();
-  await script('/public-sync.js?v=32');ensureRenderTargets();
-  await script('/dashboard-unified.js?v=32');ensureRenderTargets();
-  await script('/goals.js?v=32');ensureRenderTargets();
-  await script('/dashboard-fixes.js?v=32');ensureRenderTargets();
-  await script('/janelle-custom.js?v=32');ensureRenderTargets();
-  await script('/daily-routine.js?v=32');ensureRenderTargets();
-  await script('/janelle-exercise.js?v=2');ensureRenderTargets();
+  await script('/janelle-rescue.js?v=2');ensureRenderTargets();
+  await script('/dashboard-v3.js?v=33');ensureRenderTargets();
+  await script('/public-sync.js?v=33');ensureRenderTargets();
+  await script('/dashboard-unified.js?v=33');ensureRenderTargets();
+  await script('/goals.js?v=33');ensureRenderTargets();
+  await script('/dashboard-fixes.js?v=33');ensureRenderTargets();
+  await script('/janelle-custom.js?v=33');ensureRenderTargets();
+  await script('/daily-routine.js?v=33');ensureRenderTargets();
+  await script('/janelle-exercise.js?v=3');ensureRenderTargets();
   await new Promise(resolve=>setTimeout(resolve,180));
-  try{if(typeof window.render==='function')window.render()}catch(error){console.warn('Final dashboard render:',error)}
+  try{if(typeof render==='function')render()}catch(error){console.warn('Final dashboard render:',error)}
  }finally{
   clearTimeout(bootFallback);
   revealDashboard();
